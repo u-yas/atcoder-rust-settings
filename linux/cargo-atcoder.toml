@@ -15,8 +15,7 @@ panic = 'abort'
 
 # dependencies added to new project
 [dependencies]
-# proconio = "*"
-# competitive = { git = "https://github.com/tanakh/competitive-rs.git" }
+proconio = {version="0.3.6", features=["derive"]}
 num = "0.2.1"
 num-bigint = "0.2.6"
 num-complex = "0.2.4"
@@ -51,7 +50,6 @@ either = "1.5.3"
 im-rc = "14.3.0"
 fixedbitset = "0.2.0"
 bitset-fixed = "0.1.0"
-proconio = { version = "0.3.6", features = ["derive"] }
 text_io = "0.1.8"
 whiteread = "0.5.0"
 rustc-hash = "1.1.0"
@@ -63,23 +61,15 @@ smallvec = "1.2.0"
 # source code template
 template = """
 use std::collections::*;
-use std::io::*;
-use std::str::FromStr;
+use proconio::input;
+
 
 fn main() {
-    let input: = read();
-}
-fn read<T: FromStr>() -> T {
-    let stdin = stdin();
-    let stdin = stdin.lock();
-    let token: String = stdin
-        .bytes()
-        .map(|c| c.expect("failed to read char") as char) 
-        .skip_while(|c| c.is_whitespace())
-        .take_while(|c| !c.is_whitespace())
-        .collect();
-    token.parse().ok().expect("failed to parse token")
-}
+  //  input!{
+  //     //任意の変数名と型
+  //  }
 
+  //  println!("{}",);
+}
 
 """
